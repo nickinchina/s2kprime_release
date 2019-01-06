@@ -1,4 +1,4 @@
-mkdir "C:\s2kagent";
+#mkdir "C:\s2kagent";
 cd "C:\s2kagent";
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -10,7 +10,7 @@ function Unzip
 }
 
 write-host "download nssm";
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+#[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Method Get -Uri  https://nssm.cc/release/nssm-2.24.zip -OutFile .\nssm.zip; 
 
 write-host "install nssm";
@@ -19,7 +19,7 @@ rm "C:\s2kagent\nssm.zip";
 
 
 write-host "install chocolatey"
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
+#Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
 
 write-host "install virtualbox"
 choco install virtualbox;
