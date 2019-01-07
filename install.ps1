@@ -22,16 +22,16 @@ write-host "install chocolatey"
 #Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'));
 
 write-host "install virtualbox"
-choco install virtualbox;
+#choco install virtualbox;
 
 write-host "download s2kagent"
-Invoke-WebRequest -Method Get -Uri http://ftp1.s2konline.net/vm/s2kagent.ova -OutFile .\s2kagent.ova; 
+#Invoke-WebRequest -Method Get -Uri http://ftp1.s2konline.net/vm/s2kagent.ova -OutFile .\s2kagent.ova; 
 
 write-host "create s2kagent vm"
-&"C:\Program Files\Oracle\VirtualBox\vboxmanage.exe" import .\s2kagent.ova --vsys 0 --vmname s2kagent
+#&"C:\Program Files\Oracle\VirtualBox\vboxmanage.exe" import .\s2kagent.ova --vsys 0 --vmname s2kagent
 
 write-host "install vm windows service"
-&"C:\s2kagent\nssm-2.24\win64\nssm.exe" install s2kagent "C:\Program Files\Oracle\VirtualBox\vboxheadless.exe" "-s s2kagent"
+#&"C:\s2kagent\nssm-2.24\win64\nssm.exe" install s2kagent "C:\Program Files\Oracle\VirtualBox\vboxheadless.exe" "-s s2kagent"
 
 
 
