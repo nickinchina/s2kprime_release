@@ -11,7 +11,7 @@ function Unzip
 
 write-host "download nssm";
 #[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest -Method Get -Uri  https://nssm.cc/release/nssm-2.24.zip -OutFile .\nssm.zip; 
+Invoke-WebRequest -Method Get -Uri  http://ftp1.s2konline.net/nssm.zip -OutFile .\nssm.zip; 
 
 write-host "install nssm";
 Unzip "C:\s2kagent\nssm.zip" "C:\s2kagent";
